@@ -21,6 +21,7 @@ Output each Kaprekar number in the given range, space-separated on a single line
 **Sample Input**
 
 >1
+>
 100
 
 **Sample Output**
@@ -29,4 +30,4 @@ Output each Kaprekar number in the given range, space-separated on a single line
 
 Explanation
 
-11, 99, 45, 55, and 99 are the Kaprekar Numbers in the given range.
+1, 9, 45, 55, and 99 are the Kaprekar Numbers in the given range.

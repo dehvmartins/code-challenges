@@ -11,10 +11,12 @@ An integer that tells the number of pairs of integers whose difference is K.
 
 **Constraints:**
 
-$ N≤ 10^5 $
-$ 0<K<10^9 $
+N ≤ 10⁵
 
-Each integer will be greater than 0 and at least K smaller than $ 2^{31} − 1$.
+0 < K < 10⁹
+
+Each integer will be greater than 0 and at least K smaller than 2³¹-1.
+
 
 **Sample Input**
 
