@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'surveys#index'
+  
   resources :surveys, only: [:index, :show] do
     member do
       get :new_send
@@ -6,5 +8,5 @@ Rails.application.routes.draw do
       post :send_email
     end
   end
-  root to: 'surveys#index'
+  resources :votes, only: [:create]
 end
