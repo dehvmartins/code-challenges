@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p> Click on the link
+    <%= url_for(action: 'respond', controller: 'surveys', id: @survey.id,
+                token: @token, only_path: false) %> </p>
+  </body>
+</html>
