@@ -1,27 +1,23 @@
-HappyNel
-==
-
-Dashboard de enquete de satisfação
-
-## Requerimentos
+## Requirements
 
 1. Rails > 4
-2. Git - Ceder acesso ao repositório. Pode ser no Bitbucket, Github, Gitlab...
+2. Git - Allow access to repository. Bitbucket, Github, Gitlab.
 
-## Escopo
+## Scope
 
-Imagine que você quer saber a satisfação do seu time. Você vai criar uma enquete e cada membro vai responder com uma nota de 1 a 5. Cada nota é anônima e o resultado da pesquisa é a média da soma das notas.
+Imagine you want to know the satisfaction of your team. You'll create a survey and
+each member will rate with values from 1 to 5. Each answer is anonymous and
+survey's result is the average of the sum of the notes.
 
 ### Cuidados
 
-1. Toda resposta é anônima
-2. Envie por e-mail a pesquisa para cada membro da sua equipe (você pode enviar um link para o formulário de resposta)
-3. A pesquisa está concluída quando todos responderem
+1. Send the survey by email to each member of your team
+2. The survey is finished when everyone has answered
 
 ### Plus :heavy_plus_sign:
 
-1. Testes usando > [Rspec 3](http://rspec.info/)
+1. Tests using > [Rspec 3](http://rspec.info/)
 2. [Rails Style](https://github.com/bbatsov/rails-style-guide)
 3. [Bootstrap](http://getbootstrap.com/)
-4. Usar Postgres como database
-5. Deploy no [Heroku](www.heroku.com)
+4. Use Postgres as database
+5. Deploy at [Heroku](www.heroku.com)
