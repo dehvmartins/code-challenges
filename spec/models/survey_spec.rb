@@ -19,5 +19,8 @@ RSpec.describe Survey, type: :model do
     end
   end
 
+  it 'returns empty summary' do
+    expect(survey.summary).to eq({})
+  end
 
 end
