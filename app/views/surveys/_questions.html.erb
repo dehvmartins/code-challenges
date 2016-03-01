@@ -1,0 +1,12 @@
+<div class="form-group">
+  <%= content_tag(:label) do %>
+    <%= "Questão: #{question.title}" %>
+
+    <% question.options.each do |option| %>
+      <div class="radio">
+        <%= radio_button_tag "questions[#{question.id}]", option.id %>
+        <%= option.title %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

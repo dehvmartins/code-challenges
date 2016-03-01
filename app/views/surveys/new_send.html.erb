@@ -1,0 +1,21 @@
+<% if @survey.open? %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <%= form_tag send_email_survey_path, method: :post, id: 'send_email_form', class: "form-horizontal" do %>
+
+          <div class="form-group">
+            <%= text_area_tag :emails, nil, rows: 10, cols: 100,
+                placeholder: "Digite os emails separando por espaços" %>
+          </div>
+
+          <%= submit_tag 'Enviar', class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+<% else %>
+  <h1>Pesquisa fechada</h1>
+<% end %>

@@ -1,5 +1,5 @@
 class SurveysController < ApplicationController
-  before_action :set_survey, only: [:show]
+  before_action :set_survey, only: [:send_email, :show, :new_send]
 
   def index
     @surveys = Survey.all
@@ -7,6 +7,19 @@ class SurveysController < ApplicationController
 
   def show
     @questions = @survey.questions
+  end
+
+  def new_send
+  end
+
+  def send_email
+    if params[:emails].present?
+      @emails = @survey.valid_emails(params[:emails].split(" "))
+      SurveyMailerJob.perform_async(@survey, @emails)
+      redirect_to surveys_path, alert: "Pesquisa enviada!"
+    else
+      redirect_to new_send_survey_path(@survey), alert: "Preencha com algum email!"
+    end
   end
 
   private
