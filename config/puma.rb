@@ -10,4 +10,4 @@ environment ENV['RACK_ENV'] || 'development'
 
 on_worker_boot do
   ActiveRecord::Base.establish_connection
-en
+end

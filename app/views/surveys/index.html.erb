@@ -1,0 +1,18 @@
+<h3>Enquetes Disponíveis</h3>
+
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <th>Enquete</th>
+      <th>Questões</th>
+    </thead>
+    <tbody>
+      <% @surveys.each do | survey | %>
+        <tr>
+          <td><%= link_to survey.title, survey %></td>
+          <td><%= survey.questions.size %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
