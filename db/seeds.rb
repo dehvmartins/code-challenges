@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+survey = Survey.create(title: "Satisfação")
+options = (1..5).map { |i| Option.new(title: i.to_s)}
+question = Question.create(title: "Nota de satisfação com o time",
+           options: options, survey: survey)
