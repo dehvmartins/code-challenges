@@ -28,6 +28,8 @@ gem 'rails_12factor', group: :production
 
 gem 'puma'
 
+gem 'sucker_punch', '~> 2.0'
+
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
