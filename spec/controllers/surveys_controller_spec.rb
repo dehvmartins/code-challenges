@@ -40,6 +40,41 @@ RSpec.describe SurveysController, :type => :controller do
     end
   end
 
+  describe "GET respond" do
+    before(:each) do
+      @survey = create(:survey, token: ["token"])
+      @question = create(:question, survey: @survey)
+    end
+
+    context "when token is valid" do
+      it "assigns @survey and @questions" do
+        get :respond, {id: @survey, token: "token"}
+        expect(response.status).to eq 200
+        expect(assigns(:survey)).to eq(@survey)
+        expect(assigns(:questions)).to eq(@survey.questions)
+      end
+
+      it "renders the #respond view" do
+        get :respond, {id: @survey, token: "token"}
+        expect(response).to render_template :respond
+      end
+    end
+
+    context "when token is invalid" do
+      it "assigns doesnt @survey and @questions" do
+        get :respond, id: @survey
+        expect(response.status).to eq 401
+        expect(assigns(:survey)).to be_nil
+        expect(assigns(:questions)).to be_nil
+      end
+
+      it "not renders the #respond view" do
+        get :respond, id: @survey
+        expect(response).not_to render_template :respond
+      end
+    end
+  end
+
   describe "POST send_email" do
     before(:each) do
       @survey = create(:survey)

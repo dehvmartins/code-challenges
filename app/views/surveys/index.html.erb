@@ -11,7 +11,8 @@
         <tr>
           <td><%= link_to survey.title, survey %></td>
           <td><%= survey.questions.size %></td>
-           <td><%= link_to "Enviar por email", new_send_survey_url(survey) %></td>
+          <td><%= survey.summary %></td>
+          <td><%= link_to "Enviar por email", new_send_survey_url(survey) %></td>
         </tr>
       <% end %>
     </tbody>

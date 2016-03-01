@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <%= form_tag votes_path, method: :post, class: "form-horizontal" do %>
+        <%= hidden_field_tag 'survey[id]', @survey.id %>
+        <%= hidden_field_tag 'token', @token %>
+
+        <%= render partial: 'questions', collection: @questions, as: :question %>
+
+        <%= submit_tag 'Vote', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>

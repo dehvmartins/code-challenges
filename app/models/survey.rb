@@ -14,4 +14,16 @@ class Survey < ActiveRecord::Base
     end
     h
   end
+
+  def remove_token token
+    self.token.delete token
+    self.save!
+    close
+  end
+
+  private
+
+  def close
+    self.update(status: :closed) if token.empty?
+  end
 end

@@ -23,4 +23,11 @@ RSpec.describe Survey, type: :model do
     expect(survey.summary).to eq({})
   end
 
+  it 'removes token' do
+    survey = create(:survey, token: ["teste"])
+    expect(survey.token).not_to eq([])
+    survey.remove_token "teste"
+    expect(survey.token).to eq([])
+  end
+
 end

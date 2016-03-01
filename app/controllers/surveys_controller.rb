@@ -1,11 +1,17 @@
 class SurveysController < ApplicationController
-  before_action :set_survey, only: [:send_email, :show, :new_send]
+  before_action :authenticate, only: [:respond]
+  before_action :set_survey, only: [:send_email, :show, :respond, :new_send]
 
   def index
     @surveys = Survey.all
   end
 
   def show
+    @questions = @survey.questions
+  end
+
+  def respond
+    @token = params[:token]
     @questions = @survey.questions
   end
 

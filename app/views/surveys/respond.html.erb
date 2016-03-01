@@ -1,0 +1,6 @@
+<% if @survey.open? %>
+  <h1><%= @survey.title %></h1>
+  <%= render 'voting_form' %>
+<% else %>
+  <h1>Pesquisa fechada</h1>
+<% end %>
