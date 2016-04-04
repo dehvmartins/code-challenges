@@ -1,0 +1,11 @@
+<%= form_tag(root_path, :method => "get", class: "form-inline") do %>
+  <%= text_field_tag :word, params[:word], :required => true, placeholder: "Word", class: 'form-control' %>
+  <%= submit_tag "Search", class: 'btn btn-default' %>
+<% end %>
+
+<% if @definitions %>
+  <h3>Definitions:</h3>
+  <ul class="media-list">
+    <%= render partial: "definitions", collection: @definitions, as: :definition %>
+  </ul>
+<% end %>
